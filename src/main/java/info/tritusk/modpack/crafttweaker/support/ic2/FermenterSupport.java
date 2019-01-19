@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -18,7 +17,7 @@ public final class FermenterSupport {
 
     @ZenMethod
     public static void addRecipe(ILiquidStack output, ILiquidStack input, int heat) {
-        CraftTweakerAPI.apply(new FermentationAction(CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(output), heat));
+        CraftTweakerActions.apply(new FermentationAction(CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(output), heat));
     }
 
     private static final class FermentationAction implements IAction {

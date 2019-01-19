@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -18,7 +17,7 @@ public final class SemiFluidGeneratorSupport {
 
     @ZenMethod
     public static void addFluid(ILiquidStack liquid, double powerOutput) {
-        CraftTweakerAPI.apply(new SemiFluidGeneratorFuelAction(liquid, powerOutput));
+        CraftTweakerActions.apply(new SemiFluidGeneratorFuelAction(liquid, powerOutput));
     }
 
     private static final class SemiFluidGeneratorFuelAction implements IAction {

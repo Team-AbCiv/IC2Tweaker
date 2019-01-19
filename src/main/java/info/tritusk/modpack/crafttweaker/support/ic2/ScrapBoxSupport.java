@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -12,8 +11,6 @@ import net.minecraft.item.ItemStack;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 
-import java.util.concurrent.Callable;
-
 @ModOnly("ic2")
 @ZenClass("mods.ic2.ScrapBox")
 @ZenRegister
@@ -21,12 +18,12 @@ public final class ScrapBoxSupport {
 
     @ZenMethod
     public static void addDrop(WeightedItemStack weightedItem) {
-        CraftTweakerAPI.apply(new AddScrapBoxDropAction(weightedItem));
+        CraftTweakerActions.apply(new AddScrapBoxDropAction(weightedItem));
     }
 
     @ZenMethod
     public static void addDrop(IItemStack item, float chance) {
-        CraftTweakerAPI.apply(new AddScrapBoxDropAction(item, chance));
+        CraftTweakerActions.apply(new AddScrapBoxDropAction(item, chance));
     }
 
     private static final class AddScrapBoxDropAction implements IAction {

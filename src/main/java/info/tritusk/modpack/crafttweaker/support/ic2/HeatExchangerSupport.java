@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -21,22 +20,22 @@ public final class HeatExchangerSupport {
 
     @ZenMethod
     public static void addFluidCoolDown(ILiquidStack output, ILiquidStack input, int heat) {
-        CraftTweakerAPI.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
     }
 
     @ZenMethod
     public static void addFluidCoolDown(ILiquidDefinition output, ILiquidDefinition input, int heat) {
-        CraftTweakerAPI.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
     }
 
     @ZenMethod
     public static void addFluidHeatUp(ILiquidStack output, ILiquidStack input, int heat) {
-        CraftTweakerAPI.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
     }
 
     @ZenMethod
     public static void addFluidHeatUp(ILiquidDefinition output, ILiquidDefinition input, int heat) {
-        CraftTweakerAPI.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
     }
 
     private static final class HeatExchangeAction implements IAction {

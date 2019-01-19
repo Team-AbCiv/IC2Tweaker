@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -17,6 +16,6 @@ public final class MaceratorSupport {
 
     @ZenMethod
     public static void addRecipe(IItemStack output, IIngredient input) {
-        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.macerator, IC2RecipeInputs.of(input), null, CraftTweakerMC.getItemStack(output)));
+        CraftTweakerActions.apply(new SimpleIC2RecipeAction(Recipes.macerator, IC2RecipeInputs.of(input), null, CraftTweakerMC.getItemStack(output)));
     }
 }

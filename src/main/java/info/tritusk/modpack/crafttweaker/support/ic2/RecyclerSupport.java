@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -20,12 +19,12 @@ public final class RecyclerSupport {
 
     @ZenMethod
     public static void addBlacklist(IItemStack item) {
-        CraftTweakerAPI.apply(new RecyclingBlacklistAction(IC2RecipeInputs.of(item)));
+        CraftTweakerActions.apply(new RecyclingBlacklistAction(IC2RecipeInputs.of(item)));
     }
 
     @ZenMethod
     public static void addBlacklist(IIngredient ingredient) {
-        CraftTweakerAPI.apply(new RecyclingBlacklistAction(IC2RecipeInputs.of(ingredient)));
+        CraftTweakerActions.apply(new RecyclingBlacklistAction(IC2RecipeInputs.of(ingredient)));
     }
 
     private static final class RecyclingBlacklistAction implements IAction {

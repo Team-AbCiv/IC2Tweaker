@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -23,12 +22,12 @@ public final class CannerSupport {
 
     @ZenMethod
     public static void addBottleRecipe(IItemStack output, IIngredient container, IIngredient filler) {
-        CraftTweakerAPI.apply(new BottleAction(container, filler, output));
+        CraftTweakerActions.apply(new BottleAction(container, filler, output));
     }
 
     @ZenMethod
     public static void addEnrichRecipe(ILiquidStack output, ILiquidStack input, IIngredient additive) {
-        CraftTweakerAPI.apply(new EnrichAction(input, additive, output));
+        CraftTweakerActions.apply(new EnrichAction(input, additive, output));
     }
 
     private static final class BottleAction implements IAction {

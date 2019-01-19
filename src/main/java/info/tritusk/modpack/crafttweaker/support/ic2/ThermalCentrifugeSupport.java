@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -21,7 +20,7 @@ public final class ThermalCentrifugeSupport {
     public static void addRecipe(IItemStack[] outputs, IIngredient input, @Optional(valueLong = 1000L) int minHeat) {
         NBTTagCompound data = new NBTTagCompound();
         data.setInteger("minHeat", minHeat);
-        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.centrifuge, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
+        CraftTweakerActions.apply(new SimpleIC2RecipeAction(Recipes.centrifuge, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
     }
 
 }

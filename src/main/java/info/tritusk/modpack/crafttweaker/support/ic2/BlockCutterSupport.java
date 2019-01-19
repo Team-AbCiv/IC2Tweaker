@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -21,7 +20,7 @@ public final class BlockCutterSupport {
     public static void addRecipe(IItemStack output, IIngredient input, @Optional int minHardness) {
         NBTTagCompound data = new NBTTagCompound();
         data.setInteger("hardness", minHardness);
-        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.blockcutter, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStack(output)));
+        CraftTweakerActions.apply(new SimpleIC2RecipeAction(Recipes.blockcutter, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStack(output)));
     }
 
 }

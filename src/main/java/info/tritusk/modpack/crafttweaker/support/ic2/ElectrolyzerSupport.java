@@ -1,6 +1,5 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
-import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -14,7 +13,6 @@ import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenClass;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @ModOnly("ic2")
 @ZenClass("mods.ic2.Electrolyzer")
@@ -22,7 +20,7 @@ import java.util.List;
 public final class ElectrolyzerSupport {
 
     public static void addRecipe(ILiquidStack[] outputs, ILiquidStack input, int power, @Optional(valueLong = 200L) int time) {
-        CraftTweakerAPI.apply(new AddElectrolyzerRecipeAction(input, power, time, outputs));
+        CraftTweakerActions.apply(new AddElectrolyzerRecipeAction(input, power, time, outputs));
     }
 
     private static final class AddElectrolyzerRecipeAction implements IAction {
@@ -35,7 +33,7 @@ public final class ElectrolyzerSupport {
             this.input = CraftTweakerMC.getLiquidStack(input);
             this.power = power;
             this.time = time;
-            List<IElectrolyzerRecipeManager.ElectrolyzerOutput> actualOutputs = new ArrayList<>(6);
+            ArrayList<IElectrolyzerRecipeManager.ElectrolyzerOutput> actualOutputs = new ArrayList<>(6);
             for (int i = 0; i < 6; i++) {
                 if (outputs[i] != null) {
                     actualOutputs.add(new IElectrolyzerRecipeManager.ElectrolyzerOutput(outputs[i].getName(), outputs[i].getAmount(), EnumFacing.byIndex(i)));
