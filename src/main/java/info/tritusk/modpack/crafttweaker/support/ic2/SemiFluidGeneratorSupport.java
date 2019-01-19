@@ -26,7 +26,7 @@ public final class SemiFluidGeneratorSupport {
         private final FluidStack fluid;
         private final double power;
 
-        private SemiFluidGeneratorFuelAction(ILiquidStack liquid, double power) {
+        SemiFluidGeneratorFuelAction(ILiquidStack liquid, double power) {
             this.fluid = CraftTweakerMC.getLiquidStack(liquid);
             this.power = power;
         }

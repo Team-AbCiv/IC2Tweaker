@@ -31,7 +31,7 @@ public final class ElectrolyzerSupport {
         private final int power, time;
         private final IElectrolyzerRecipeManager.ElectrolyzerOutput[] outputs;
 
-        private AddElectrolyzerRecipeAction(ILiquidStack input, int power, int time, ILiquidStack[] outputs) {
+        AddElectrolyzerRecipeAction(ILiquidStack input, int power, int time, ILiquidStack[] outputs) {
             this.input = CraftTweakerMC.getLiquidStack(input);
             this.power = power;
             this.time = time;

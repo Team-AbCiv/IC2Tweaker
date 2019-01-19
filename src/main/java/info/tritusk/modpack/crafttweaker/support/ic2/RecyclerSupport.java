@@ -32,7 +32,7 @@ public final class RecyclerSupport {
 
         private final IRecipeInput in;
 
-        private RecyclingBlacklistAction(IRecipeInput in) {
+        RecyclingBlacklistAction(IRecipeInput in) {
             this.in = in;
         }
 
