@@ -34,7 +34,7 @@ public final class ElectrolyzerSupport {
             this.power = power;
             this.time = time;
             ArrayList<IElectrolyzerRecipeManager.ElectrolyzerOutput> actualOutputs = new ArrayList<>(6);
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < outputs.length && i < 6; i++) {
                 if (outputs[i] != null) {
                     actualOutputs.add(new IElectrolyzerRecipeManager.ElectrolyzerOutput(outputs[i].getName(), outputs[i].getAmount(), EnumFacing.byIndex(i)));
                 }
