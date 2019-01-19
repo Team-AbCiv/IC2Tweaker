@@ -1,5 +1,6 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
+import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -16,16 +17,16 @@ public final class MetalFormerSupport {
 
     @ZenMethod
     public static void addCuttingRecipe(IItemStack output, IIngredient input) {
-        Recipes.metalformerCutting.addRecipe(IC2RecipeInputs.of(input), null, false, CraftTweakerMC.getItemStack(output));
+        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.metalformerCutting, IC2RecipeInputs.of(input), null, CraftTweakerMC.getItemStack(output)));
     }
 
     @ZenMethod
     public static void addExtrudingRecipe(IItemStack output, IIngredient input) {
-        Recipes.metalformerExtruding.addRecipe(IC2RecipeInputs.of(input), null, false, CraftTweakerMC.getItemStack(output));
+        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.metalformerExtruding, IC2RecipeInputs.of(input), null, CraftTweakerMC.getItemStack(output)));
     }
 
     @ZenMethod
     public static void addRollingRecipe(IItemStack output, IIngredient input) {
-        Recipes.metalformerRolling.addRecipe(IC2RecipeInputs.of(input), null, false, CraftTweakerMC.getItemStack(output));
+        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.metalformerRolling, IC2RecipeInputs.of(input), null, CraftTweakerMC.getItemStack(output)));
     }
 }

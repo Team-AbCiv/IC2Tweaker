@@ -1,5 +1,6 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
+import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -20,7 +21,7 @@ public final class OreWasherSupport {
     public static void addRecipe(IItemStack[] outputs, IIngredient input, @Optional(valueLong = 1000L) int water) {
         NBTTagCompound data = new NBTTagCompound();
         data.setInteger("amount", water);
-        Recipes.oreWashing.addRecipe(IC2RecipeInputs.of(input), data, false, CraftTweakerMC.getItemStacks(outputs));
+        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.oreWashing, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
     }
 
 }

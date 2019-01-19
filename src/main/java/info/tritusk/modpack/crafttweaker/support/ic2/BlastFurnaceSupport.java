@@ -1,5 +1,6 @@
 package info.tritusk.modpack.crafttweaker.support.ic2;
 
+import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IIngredient;
@@ -20,7 +21,7 @@ public final class BlastFurnaceSupport {
         NBTTagCompound data = new NBTTagCompound();
         data.setInteger("fluid", totalFluidCost);
         data.setInteger("duration", time);
-        Recipes.centrifuge.addRecipe(IC2RecipeInputs.of(input), data, false, CraftTweakerMC.getItemStacks(outputs));
+        CraftTweakerAPI.apply(new SimpleIC2RecipeAction(Recipes.blastfurnace, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
     }
 
 }
