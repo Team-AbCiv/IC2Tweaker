@@ -5,7 +5,7 @@ import crafttweaker.IAction;
 
 final class CraftTweakerActions {
 
-    private static final boolean DEBUG = Boolean.parseBoolean(System.getProperty("ic2-tweaker.debug"));
+    private static final boolean DEBUG = Boolean.getBoolean("ic2-tweaker.debug");
 
     static void apply(IAction action) {
         if (DEBUG) {
