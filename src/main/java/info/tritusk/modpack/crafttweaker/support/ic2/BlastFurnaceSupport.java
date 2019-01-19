@@ -16,9 +16,9 @@ import stanhebben.zenscript.annotations.ZenMethod;
 public final class BlastFurnaceSupport {
 
     @ZenMethod
-    public static void addRecipe(IItemStack[] outputs, IIngredient input, int totalFluidCost, int time) {
+    public static void addRecipe(IItemStack[] outputs, IIngredient input, int fluidCost, int time) {
         NBTTagCompound data = new NBTTagCompound();
-        data.setInteger("fluid", totalFluidCost);
+        data.setInteger("fluid", fluidCost);
         data.setInteger("duration", time);
         CraftTweakerActions.apply(new SimpleIC2RecipeAction(Recipes.blastfurnace, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
     }

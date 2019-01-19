@@ -5,4 +5,4 @@ Currently, this mod allows you to add extra recipes for various machines of Indu
 
 ### Documentation
 
-TBD
+See [here](doc/README.md) for a quick guide on how to use this.
