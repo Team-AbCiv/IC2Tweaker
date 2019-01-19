@@ -7,6 +7,7 @@
     "url" : "https://github.com/Team-AbCiv/IC2Tweaker",
     "authorList": [ "3TUSK" ],
     "credits": "stanhebben for the original IC2 support in MineTweaker; /u/wormzjl for his request of making this a thing.",
+    "logoFile": "logo.png",
     "useDependencyInformation": true,
     "requiredMods": [ "crafttweaker", "ic2" ]
   }
