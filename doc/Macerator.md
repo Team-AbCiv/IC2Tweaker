@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.Macerator
+import mods.ic2.Macerator;
 ```
 
 ### Method

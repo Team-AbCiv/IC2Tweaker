@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.BlockCutter
+import mods.ic2.BlockCutter;
 ```
 
 ### Method

@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.ThermalCentrifuge
+import mods.ic2.ThermalCentrifuge;
 ```
 
 ### Method

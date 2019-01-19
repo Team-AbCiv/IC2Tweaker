@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.OreWasher
+import mods.ic2.OreWasher;
 ```
 
 ### Method

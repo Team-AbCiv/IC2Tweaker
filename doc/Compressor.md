@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.Compressor
+import mods.ic2.Compressor;
 ```
 
 ### Method

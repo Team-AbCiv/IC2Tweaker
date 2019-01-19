@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.MetalFormer
+import mods.ic2.MetalFormer;
 ```
 
 ### Method

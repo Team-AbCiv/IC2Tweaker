@@ -3,7 +3,7 @@
 ### Class
 
 ```java
-import mods.ic2.Extractor
+import mods.ic2.Extractor;
 ```
 
 ### Method
