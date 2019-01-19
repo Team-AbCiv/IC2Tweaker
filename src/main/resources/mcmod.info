@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "ic2_tweaker",
+    "name": "IC2 Tweaker",
+    "description": "There are some people who insist using CraftTweaker for tweaking everything. So here we go... this mod brings back the old IC2 support...",
+    "version": "${version}",
+    "url" : "https://github.com/Team-AbCiv/IC2Tweaker",
+    "authorList": [ "3TUSK" ],
+    "credits": "stanhebben for the original IC2 support in MineTweaker; /u/wormzjl for his request of making this a thing.",
+    "useDependencyInformation": true,
+    "requiredMods": [ "crafttweaker", "ic2" ]
+  }
+]
