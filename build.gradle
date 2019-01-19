@@ -39,14 +39,21 @@ repositories {
 }
 
 dependencies {
-    compile group: 'mezz.jei', name: 'jei_1.12.2', version: jei_version
+    runtimeOnly group: 'mezz.jei', name: 'jei_1.12.2', version: jei_version
 
     deobfCompile group: 'net.industrial-craft', name: 'industrialcraft-2', version: ic2_version
 
-    deobfCompile group: 'CraftTweaker2', name: 'ZenScript', version: craft_tweaker_version
-    deobfCompile group: 'CraftTweaker2', name: 'CraftTweaker2-API', version: craft_tweaker_version
+    deobfCompile(group: 'CraftTweaker2', name: 'ZenScript', version: craft_tweaker_version) {
+        exclude group: 'org.ow2.asm'
+        exclude group: 'com.google.code.gson'
+    }
+    deobfCompile(group: 'CraftTweaker2', name: 'CraftTweaker2-API', version: craft_tweaker_version) {
+        exclude group: 'org.ow2.asm'
+        exclude group: 'com.google.code.gson'
+    }
     deobfCompile(group: 'CraftTweaker2', name: 'CraftTweaker2-MC1120-Main', version: "1.12-${craft_tweaker_version}") {
         exclude group: 'org.ow2.asm'
+        exclude group: 'com.google.code.gson'
     }
 }
 
