@@ -20,22 +20,22 @@ public final class HeatExchangerSupport {
 
     @ZenMethod
     public static void addFluidCoolDown(ILiquidStack output, ILiquidStack input, int heat) {
-        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(output), heat));
     }
 
     @ZenMethod
     public static void addFluidCoolDown(ILiquidDefinition output, ILiquidDefinition input, int heat) {
-        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidCooldownManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(output), heat));
     }
 
     @ZenMethod
     public static void addFluidHeatUp(ILiquidStack output, ILiquidStack input, int heat) {
-        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getLiquidStack(input), CraftTweakerMC.getLiquidStack(output), heat));
     }
 
     @ZenMethod
     public static void addFluidHeatUp(ILiquidDefinition output, ILiquidDefinition input, int heat) {
-        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(input), heat));
+        CraftTweakerActions.apply(new HeatExchangeAction(Recipes.liquidHeatupManager, CraftTweakerMC.getFluid(input), CraftTweakerMC.getFluid(output), heat));
     }
 
     private static final class HeatExchangeAction implements IAction {

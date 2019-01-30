@@ -9,6 +9,7 @@
     "credits": "stanhebben for the original IC2 support in MineTweaker; /u/wormzjl for his request of making this a thing.",
     "logoFile": "logo.png",
     "useDependencyInformation": true,
-    "requiredMods": [ "crafttweaker", "ic2" ]
+    "requiredMods": [ "ic2" ],
+    "dependencies": [ "crafttweaker", "ic2" ]
   }
 ]
