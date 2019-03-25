@@ -27,7 +27,7 @@ minecraft:dirt*64 = minecraft:diamond_block
 
 When using IC2 Experimental, to remove an existed recipe simply remove the corresponding line in `config/ic2/metal_former_cutting.ini`.
 
-When using IC2 Classic & Ic2 Classic Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
+When using IC2 Classic & Ic2c Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
 
 #### `addExtrudingRecipe`
 
@@ -48,7 +48,7 @@ minecraft:dirt*64 = minecraft:diamond_block
 
 When using IC2 Experimental, to remove an existed recipe simply remove the corresponding line in `config/ic2/metal_former_extruding.ini`.
 
-When using IC2 Classic & Ic2 Classic Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
+When using IC2 Classic & Ic2c Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
 
 #### `addRollingRecipe`
 
@@ -69,4 +69,4 @@ minecraft:dirt*64 = minecraft:diamond_block
 
 When using IC2 Experimental, to remove an existed recipe simply remove the corresponding line in `config/ic2/metal_former_rolling.ini`.
 
-When using IC2 Classic & Ic2 Classic Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
+When using IC2 Classic & Ic2c Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.

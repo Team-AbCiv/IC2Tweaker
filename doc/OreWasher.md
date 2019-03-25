@@ -28,4 +28,4 @@ minecraft:dirt = minecraft:diamond mincraft:emerald minecraft:nether_star @fluid
 
 When using IC2 Experimental, to remove an existed recipe simply remove the corresponding line in `config/ic2/ore_washer.ini`.
 
-When using IC2 Classic & Ic2 Classic Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
+When using IC2 Classic & Ic2c Extras, to remove an existed recipe simply disable the corresponding recipe in `config/ic2/ic2machineRecipes.json`.
