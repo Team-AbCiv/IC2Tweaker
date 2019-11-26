@@ -19,6 +19,7 @@ import java.util.ArrayList;
 @ZenRegister
 public final class ElectrolyzerSupport {
 
+    @ZenMethod
     public static void addRecipe(ILiquidStack[] outputs, ILiquidStack input, int power, @Optional(valueLong = 200L) int time) {
         CraftTweakerActions.apply(new AddElectrolyzerRecipeAction(input, power, time, outputs));
     }
