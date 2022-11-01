@@ -1,1 +1,5 @@
+.gradle
+.idea
+build
 private
+run
