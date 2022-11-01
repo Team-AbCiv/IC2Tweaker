@@ -32,7 +32,7 @@ public final class SemiFluidGeneratorSupport {
 
         @Override
         public void apply() {
-            Recipes.semiFluidGenerator.addFluid(this.fluid.getFluid().getName(), this.fluid.amount, this.power);
+            Recipes.semiFluidGenerator.addFluid(this.fluid.getFluid().getName(), this.fluid.amount, (long) this.power);
         }
 
         @Override

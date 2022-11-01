@@ -1,10 +1,11 @@
+.gradle
+.idea
+build
 private
+run
 
-# vscode
+# eclipse & vscode
 .vscode/
 .classpath
 .project
 .settings/
-
-# gradle
-.gradle/

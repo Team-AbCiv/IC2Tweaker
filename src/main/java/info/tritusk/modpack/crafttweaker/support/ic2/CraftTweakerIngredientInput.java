@@ -13,6 +13,8 @@ final class CraftTweakerIngredientInput implements IRecipeInput {
 
     private final IIngredient ingredient;
 
+    private transient ItemStack[] cachedNativeItemStacks = null;
+
     CraftTweakerIngredientInput(IIngredient ingredient) {
         this.ingredient = ingredient;
     }
@@ -38,7 +40,13 @@ final class CraftTweakerIngredientInput implements IRecipeInput {
     }
 
     private ItemStack[] toNatives() {
-        return CraftTweakerMC.getItemStacks(this.ingredient.getItems());
+        if (this.cachedNativeItemStacks == null) {
+            this.cachedNativeItemStacks = CraftTweakerMC.getItemStacks(this.ingredient.getItems());
+            for (ItemStack item : this.cachedNativeItemStacks) {
+                item.setCount(this.ingredient.getAmount());
+            }
+        }
+        return this.cachedNativeItemStacks;
     }
 
 }
