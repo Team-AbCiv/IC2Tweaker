@@ -25,15 +25,15 @@ minecraft {
 repositories {
     maven {
         name = "jei"
-        url = "http://dvs1.progwml6.com/files/maven"
+        url = "https://dvs1.progwml6.com/files/maven"
     }
     maven {
         name = "ic2"
-        url = "http://maven.ic2.player.to"
+        url = "https://maven.ic2.player.to"
     }
     maven {
         name = "jared"
-        url = "http://maven.blamejared.com"
+        url = "https://maven.blamejared.com"
     }
 }
 
@@ -47,7 +47,7 @@ dependencies {
 
     implementation group: 'net.industrial-craft', name: 'industrialcraft-2', version: ic2_version
     // Not referred in code; it is here so that we have it while we launch the game in dev env.
-    runtimeOnly group: 'mezz.jei', name: 'jei_1.12.2', version: jei_version
+    implementation group: 'mezz.jei', name: 'jei_1.12.2', version: jei_version
 }
 
 jar {
