@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -17,7 +16,7 @@ group = "info.tritusk.modpack.toolkit"
 archivesBaseName = "ic2-tweaker"
 
 minecraft {
-    version = "1.12.2-14.23.5.2772"
+    version = "1.12.2-14.23.5.2836"
     runDir = "run"
     
     mappings = "stable_39"
