@@ -13,6 +13,9 @@ out
 *.iml
 .idea
 
+# vscode
+.vscode
+
 # gradle
 build
 .gradle
@@ -22,3 +25,4 @@ eclipse
 run
 out
 libs
+private
