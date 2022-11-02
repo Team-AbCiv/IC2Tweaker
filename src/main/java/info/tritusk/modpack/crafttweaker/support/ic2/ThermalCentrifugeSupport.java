@@ -6,6 +6,7 @@ import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import ic2.api.recipe.Recipes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -21,6 +22,13 @@ public final class ThermalCentrifugeSupport {
         NBTTagCompound data = new NBTTagCompound();
         data.setInteger("minHeat", minHeat);
         CraftTweakerActions.apply(new SimpleIC2RecipeAction(Recipes.centrifuge, IC2RecipeInputs.of(input), data, CraftTweakerMC.getItemStacks(outputs)));
+    }
+
+    @ZenMethod
+    public static void removeRecipe(IItemStack output, IItemStack... input) {
+        ItemStack nativeOutput = CraftTweakerMC.getItemStack(output);
+        ItemStack[] nativeInputs = CraftTweakerMC.getItemStacks(input);
+        CraftTweakerActions.apply(new SimpleIC2RecipeRemovalAction(Recipes.centrifuge, nativeOutput, nativeInputs));
     }
 
 }
