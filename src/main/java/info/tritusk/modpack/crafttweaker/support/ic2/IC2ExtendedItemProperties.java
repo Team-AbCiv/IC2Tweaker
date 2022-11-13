@@ -5,6 +5,7 @@ import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
+import ic2.api.item.ElectricItem;
 import ic2.api.item.ICustomDamageItem;
 import ic2.core.item.ItemGradualInt;
 import net.minecraft.item.Item;
@@ -20,6 +21,52 @@ import java.lang.reflect.Field;
 @ZenExpansion("crafttweaker.item.IItemStack")
 @ZenRegister
 public final class IC2ExtendedItemProperties {
+
+    @ZenMethod
+    @ZenGetter("ic2Charge")
+    public static double getIC2Charge(IItemStack value) {
+        ItemStack nativeItemStack = CraftTweakerMC.getItemStack(value);
+        return ElectricItem.manager.getCharge(nativeItemStack);
+    }
+
+    @ZenMethod
+    @ZenGetter("ic2Energy")
+    public static double getIC2Energy(IItemStack value) {
+        return getIC2Charge(value);
+    }
+
+    @ZenMethod
+    @ZenGetter("ic2MaxCharge")
+    public static double getIC2MaxCharge(IItemStack value) {
+        ItemStack nativeItemStack = CraftTweakerMC.getItemStack(value);
+        return ElectricItem.manager.getMaxCharge(nativeItemStack);
+    }
+
+    @ZenMethod
+    @ZenGetter("ic2MaxEnergy")
+    public static double getIC2MaxEnergy(IItemStack value) {
+        return getIC2MaxCharge(value);
+    }
+
+    @ZenMethod
+    @ZenSetter("ic2Charge")
+    public static void setIC2Charge(IItemStack value, double charge) {
+        ItemStack nativeItemStack = CraftTweakerMC.getItemStack(value);
+        double current = ElectricItem.manager.getCharge(nativeItemStack);
+        if (current < charge) {
+            // Current EU < target EU, adding the missing
+            ElectricItem.manager.charge(nativeItemStack, charge - current, 1, true, false);
+        } else if (current > charge) {
+            // Current EU > target EU, subtract the surplus
+            ElectricItem.manager.discharge(nativeItemStack, current - charge, 1, true, false, false);
+        }
+    }
+
+    @ZenMethod
+    @ZenSetter("ic2MaxEnergy")
+    public static void setIC2Energy(IItemStack value, double charge) {
+        setIC2Charge(value, charge);
+    }
 
     @ZenMethod
     @ZenGetter("ic2Damage")
