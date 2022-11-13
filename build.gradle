@@ -15,6 +15,12 @@ version = main_version
 group = "info.tritusk.modpack.toolkit"
 archivesBaseName = "ic2-tweaker"
 
+if (System.getenv("CI")) {
+    version += "+build.${System.getenv("GITHUB_RUN_NUMBER")}"
+} else {
+    version += "+build.private"
+}
+
 minecraft {
     version = "1.12.2-14.23.5.2836"
     runDir = "run"
@@ -67,5 +73,15 @@ processResources {
         
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+task githubActionOutput {
+    onlyIf {
+        System.env.GITHUB_ACTIONS
+    }
+    doLast {
+        println "::set-output name=artifact_path::${jar.archivePath.getAbsolutePath()}"
+        println "::set-output name=artifact_name::${jar.archiveName}"
     }
 }
